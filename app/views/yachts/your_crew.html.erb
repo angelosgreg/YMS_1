@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>Your crew</h1>
+    <h2>The <%= current_user.crew %></h2>
+    <div class="crew-flex">
+      <% @users.each do |user| %>
+        <% if  user.crew == current_user.crew %>
+          <% if user.photo.key %>
+              <div class="card-crew" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= cl_image_path user.photo.key, height: 300, width: 400, crop: :fill %>')">
+          <% else %>
+            <div class="card-crew" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<%= image_path "avatar.jpeg", height: 300, width: 400, crop: :fill %>')">
+          <% end %>
+
+
+            <h4><%= user.username.capitalize %></h4>
+          </div>
+
+
+          <%# <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
+          <%# <h4><%= user.username.capitalize %>
+          <%# <p><%= user.email %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

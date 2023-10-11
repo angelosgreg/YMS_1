@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>YACHT DETAILS</h1>
+    <div class="yacht-card">
+      <h2><%= @yacht.name %></h2>
+        <p><strong>Number of Guests:</strong> <%= @yacht.number_of_guests %></p>
+        <p><strong>Price:</strong> <%= @yacht.price %>€</p>
+        <p><strong>Location:</strong> <%= @yacht.location %></p>
+        <p><strong>Owner:</strong> <%= @yacht.user.username %></p>
+    </div>
+
+
+
+    <div class="button-container">
+        <%= link_to "Back to Yachts", yachts_path, class: "lrg-blue-btn" %>
+        <%= link_to "Edit", edit_yacht_path(@yacht), class: "lrg-blue-btn" %>
+        <%= button_to "Delete", @flat, class: "lrg-blue-btn", method: :delete%>
+    </div>
+
+  </div>
+</div>

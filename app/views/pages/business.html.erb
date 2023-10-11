@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+      <h1>BUSINESS ANALYSIS</h1>
+
+      <div class="grid">
+        <div class="chart1">
+          <div class="chart-label">PRICE BY CITY mine</div>
+          <%= bar_chart Yacht.where(user: current_user).group(:location).average(:price), colors: ["#18B0FF"] %>
+
+        </div>
+        <div class="chart2">
+          <div class="chart-label">PRICE BY CITY all</div>
+          <%= bar_chart Yacht.group(:location).average(:price), colors: ["#18B0FF"] %>
+        </div>
+
+
+
+        <div class="chart3">
+          <div class="chart-label">YACHTS LOCATION mine</div>
+          <%= pie_chart Yacht.where(user: current_user).group(:location).count, colors: ["#18B0FF", "#004080", "#FF6B6B", "#164B60", "#5C469C"] %>
+        </div>
+        <div class="chart4">
+          <div class="chart-label">YACHTS LOCATION all</div>
+          <%= pie_chart Yacht.group(:location).count, colors: ["#18B0FF", "#004080", "#FF6B6B", "#0A4D68", "#5C469C"] %>
+        </div>
+
+        <div class="chart5">
+        <div class="chart-label">NUMBER OF GUESTS REPARTITATION</div>
+        <%= line_chart Yacht.group(:number_of_guests).count %>
+        </div>
+
+      </div>
+  </div>
+</div>

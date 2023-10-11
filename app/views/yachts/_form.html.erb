@@ -1,0 +1,15 @@
+<%= simple_form_for(@yacht) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs" style="width: 1000px;">
+    <%= f.input :name, placeholder: "Enter yacht name" %>
+    <%= f.input :number_of_guests, placeholder: "Enter max boat capacity" %>
+    <%= f.input :price, placeholder: "Price per day" %>
+    <%= f.input :location, placeholder: "Town/city" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "" %>
+  </div>
+<% end %>

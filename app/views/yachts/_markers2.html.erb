@@ -1,0 +1,11 @@
+<div style="position: relative;">
+  <% if yacht.location == "Offshore" %>
+    <i class="fa-solid fa-ship fa-flip" style="color: grey;"></i>
+    <div class="badge rounded-pill bg-secondary fs-6" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+  <% else %>
+    <i class="fa-solid fa-ship fa-flip" style="color: #111972;"></i>
+    <div class="badge rounded-pill bg-primary fs-6" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+  <% end %>
+    <%= yacht.location %>
+  </div>
+</div>

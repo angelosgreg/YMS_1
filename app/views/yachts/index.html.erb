@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>LIST OF YACHTS</h1>
+    <div class="button-container">
+        <%= link_to "Filter My Yachts", my_yachts_path, class: "lrg-blue-btn" %>
+        <%= link_to "All Yachts", yachts_path, class: "lrg-blue-btn" %>
+        <%= link_to "Create a new yacht", new_yacht_path, class: "lrg-blue-btn" %>
+    </div>
+
+        <table class="yachts-table">
+          <thead>
+            <tr>
+               <th class="sortable" data-sort-direction="asc">
+                Name
+              </th>
+              <th>No. of people</th>
+              <th>Daily rate($)</th>
+              <th>Location</th>
+              <th>Owner</th>
+              <th>Email</th>
+              <th>      </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @yachts.each do |yacht| %>
+              <tr>
+                <td><%= link_to yacht.name, yacht_path(yacht) %></td>
+                <td><%= yacht.number_of_guests %></td>
+                <td><%= yacht.price %></td>
+                <td><%= yacht.location %></td>
+                <td><%= yacht.user.username %></td>
+                <td><%= yacht.user.email %></td>
+                <% if yacht.user.id == current_user.id %>
+                  <td><%= link_to "BOOK", new_yacht_booking_path(yacht), class: "lrg-blue-btn"%></td>
+                <% else %>
+                  <td> </td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+
+  </div>
+</div>

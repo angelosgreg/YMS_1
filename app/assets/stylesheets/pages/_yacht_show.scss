@@ -1,0 +1,30 @@
+.yacht-card {
+  margin-bottom: 20px;
+  color: black;
+  border: 2px solid $blue;
+  background: white;
+  border-radius: 20px;
+  transition: filter 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.yacht-card h2 {
+  text-transform: uppercase;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 15px;
+  padding-top: 7px;
+  color: $coral;
+}
+
+.yacht-card p strong {
+  text-transform: uppercase;
+
+}

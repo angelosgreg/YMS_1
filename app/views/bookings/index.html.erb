@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>LIST OF BOOKINGS</h1>
+    <table class="yachts-table">
+      <thead>
+        <tr>
+          <th>Check in</th>
+            <th>Check out</th>
+            <th>Amount</th>
+            <th>Location</th>
+            <th>Agency</th>
+            <th>Yacht name</th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.check_in %></td>
+            <td><%= booking.check_out %></td>
+            <% if @incomes.find_by(booking_id: booking.id).present? %>
+              <td><%= @incomes.find_by(booking_id: booking.id).amount %></td>
+            <% else %>
+              <td> - </td>
+            <% end %>
+            <td><%= booking.yacht.location %></td>
+            <td><%= booking.agency %></td>
+            <td><%= booking.yacht.name %></td>
+            <td>
+              <%= link_to "Edit", edit_booking_path(booking), class: "lrg-blue-btn" %>
+              <%= link_to "Delete",booking_path(booking),data: {turbo_method: "delete"}, class: "lrg-blue-btn" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>

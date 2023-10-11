@@ -1,0 +1,40 @@
+.form-inputs {
+  color: black;
+}
+
+.simple_form {
+  color: black;
+  background-color: white !important;
+  padding: 40px;
+  font-family: $body-font;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.form-control {
+  background-color: white !important;
+  color: black !important;
+}
+
+.main_content .container h1 {
+  font-size: 30px;
+  color: $coral;
+}
+
+.main_content .container {
+  margin-top: 30px !important;
+}
+
+.main_content .messages {
+  color: black;
+}
+
+h6 {
+  color: rgba(0, 0, 0, 0.5) !important;
+  margin-bottom: 0 !important;
+  margin-top: 40px !important;
+  font-style: italic;
+}

@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>TRACKER</h1>
+    <%= link_to "Move Your Yachts", tracker_move_path, class: "lrg-blue-btn mb-3" %>
+    <div style="width: 80%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  </div>
+</div>

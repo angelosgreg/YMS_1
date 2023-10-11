@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <%= render "shared/side-bar" %>
+  <div class="main_content">
+    <div class="row">
+      <div class="col">
+      <h1>RESERVE YOUR YACHT</h1>
+      <%= simple_form_for [@yacht, @booking], data: { controller: 'flatpickr' } do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+            <div class="form-inputs" style="width: 1000px;">
+               <%= f.input :check_in, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+                <%= f.input :check_out, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+
+            <label for="booking_agency" style="margin-bottom: 10px;">Agency</label>
+            <%= f.input :agency, label: false, placeholder: "Name of the booking agency" %>
+          </div>
+
+
+            <div class="form-actions">
+              <%= f.button :submit, class: "lrg-blue-btn" , value: "Book now!" %>
+            </div>
+          <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="home-container">
+  <div class="home-login">
+    <div class="logo">
+      <%= image_tag "YMS-logo.png", class:"logo", alt: "yms" %>
+    </div>
+    <div class="home-header">The first property <br>management system <br> that floats</div>
+    <div class="home-subheader">No more double-booking. Increased revenues. We organize your bookings for you. </div>
+    <% if user_signed_in? %>
+      <div class="login">
+        <a href="/yachts">
+          <span>
+            START FLOATING
+          </span>
+          <div class="wave"></div>
+        </a>
+      </div>
+    <% else %>
+      <div class="login">
+        <%= link_to "Login", new_user_session_path, class: "lrg-blue-btn" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "lrg-blue-btn"%>
+      </div>
+    <% end %>
+  </div>
+  <div class="home-img">
+  </div>
+</div>

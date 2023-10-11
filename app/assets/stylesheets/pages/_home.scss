@@ -1,0 +1,112 @@
+// Specific CSS for your home-page
+.home-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-login {
+  flex: 1;
+  background-color: $light-blue;
+  padding: 20px;
+}
+
+.home-img {
+  flex: 1;
+  position: relative;
+  background-image: asset-url('home-pic2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.home-header {
+  font-family: $headers-font;
+  color: black;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+}
+
+.home-subheader {
+  font-family: $body-font;
+  color: black;
+  font-weight: 600;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+.login {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 100px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* Styles */
+    .logo {
+      height: 75px;
+      width: auto;
+    }
+
+    .home-login {
+      flex: 1;
+      background-color: $light-blue;
+      padding: 5px;
+    }
+
+    .home-header {
+      font-family: $headers-font;
+      color: black;
+      font-weight: 600;
+      font-size: 3rem;
+      margin-top: 50px;
+      margin-bottom: 25px;
+
+    }
+
+    .home-subheader {
+      font-family: $body-font;
+      color: black;
+      font-weight: 300;
+    }
+
+    .login {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 25px;
+    }
+}
+
+.login-field {
+  text-align: center;
+  margin-right: 100px;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 100px;
+}
+
+.home-btn a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.home-btn a:hover {
+  background-color: $blue;
+}

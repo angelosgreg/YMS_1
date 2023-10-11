@@ -1,0 +1,25 @@
+<div class="wrapper">
+<%= render "shared/side-bar" %>
+  <div class="main_content">
+    <h1>CHATROOMS</h1>
+    <%= link_to "Create Chatroom", new_chatroom_path, class: "lrg-blue-btn" %>
+    <h6>Please select the channel you would like to join and start your conversation</h6>
+    <table class="yachts-table">
+      <thead>
+        <tr>
+          <th>Channels</th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @chatrooms.each do |chatroom| %>
+          <tr>
+            <td><%= chatroom.name %></td>
+            <td><%= link_to "Enter", chatroom_path(chatroom), class: "lrg-blue-btn" %></td>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
